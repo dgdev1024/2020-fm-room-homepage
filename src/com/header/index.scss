@@ -1,0 +1,132 @@
+@import "../../global.scss";
+
+.header {
+  display: grid;
+  grid-template-columns: 64px auto;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 64px;
+  z-index: 2;
+
+  transition-property: background-color;
+  transition-duration: 0.3s;
+
+  @media #{$screen-medium} {
+    grid-template-columns: 160px auto;
+    height: 96px;
+  }
+
+  &__toggle {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+
+    background-color: transparent;
+    border: none;
+
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @media #{$screen-medium} {
+      display: none;
+    }
+  }
+
+  &__logo {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    align-self: center;
+    justify-self: center;
+
+    @media #{$screen-medium} {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__nav {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    justify-self: end;
+    align-self: center;
+    visibility: hidden;
+    opacity: 0;
+    padding-right: 22px;
+
+    transition: 0.3s;
+
+    @media #{$screen-medium} {
+      grid-column: 2 / 3;
+      visibility: visible;
+      opacity: 1;
+      justify-self: start;
+    }
+  }
+
+  &__nav-link {
+    position: relative;
+    margin: 0px 8px;
+    color: $color-black;
+    text-decoration: none;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    @media #{$screen-medium} {
+      color: $color-white;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      width: 0px;
+      height: 2px;
+      background-color: $color-black;
+      transition-property: left, width;
+      transition-duration: 0.3s;
+
+      @media #{$screen-medium} {
+        background-color: $color-white;
+      }
+    }
+
+    &:hover:after {
+      left: 25%;
+      width: 50%;
+    }
+  }
+
+  &--shown {
+    background-color: white;
+
+    @media #{$screen-medium} {
+      background-color: transparent;
+    }
+  }
+
+  &--shown &__logo {
+    visibility: hidden;
+    opacity: 0;
+
+    @media #{$screen-medium} {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &--shown &__nav {
+    visibility: visible;
+    opacity: 1;
+  }
+}

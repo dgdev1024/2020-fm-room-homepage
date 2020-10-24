@@ -1,0 +1,21 @@
+/** @file global.scss */
+
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
+
+// Variables
+$screen-small: "(min-width: 600px)";
+$screen-medium: "(min-width: 800px)";
+$screen-large: "(min-width: 1000px)";
+$screen-extra-large: "(min-width: 1200px)";
+
+$font-family-normal: "Spartan", sans-serif;
+$font-size-normal: 12px;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$color-dark-gray: hsl(0, 0%, 63%);
+$color-black: hsl(0, 0%, 0%);
+$color-white: hsl(0, 0%, 100%);
+$color-very-dark-gray: hsl(0, 0%, 27%);
